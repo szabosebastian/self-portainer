@@ -1,0 +1,25 @@
+<div class="flex flex-col items-center justify-center gap-3 w-full">
+  @for (container of containers; track container.Id) {
+    <div (click)="changeState(container)"
+      class="border-2 rounded  w-full max-w-2xl"
+      [ngClass]="{
+        'bg-green-500 text-white': container.State === 'running',
+        'bg-red-500 text-white': container.State === 'exited'
+      }"
+    >
+      <div class="m-2">
+        <div>
+          <span class="font-bold">Names: </span><span>{{ container.Names }}</span>
+        </div>
+        <div>
+          <span class="font-bold">State: </span><span>{{ container.State }}</span>
+        </div>
+        <div>
+          <span class="font-bold">Status: </span><span>{{ container.Status }}</span>
+        </div>
+      </div>
+    </div>
+  } @empty {
+    <p class="text-center w-full max-w-3xl">No containers found</p>
+  }
+</div>

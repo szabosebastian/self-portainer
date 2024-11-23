@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "spaces": 2,
+  "generator-cli": {
+    "version": "6.3.0",
+    "generators": {
+      "example": {
+        "generatorName": "typescript-angular",
+        "inputSpec": "portainer-api-docs/portainer-portainer-ce-2.21.4-resolved.json",
+        "output": "src/app/api/portainer",
+        "additionalProperties": {
+          "fileNaming": "kebab-case",
+          "useSingleRequestParameter": true
+        },
+        "skipValidateSpec": true
+      }
+    }
+  }
+}
+
